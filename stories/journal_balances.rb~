@@ -1,0 +1,11 @@
+require File.join(File.dirname(__FILE__), "helper")
+
+Story "Accountant creates a journal", %{
+  As an accountant
+  I want journals to balance
+}, :type => RailsStory do
+
+  Scenario "Creates a journal" do
+    Given "my transaction has entries"
+  end
+end

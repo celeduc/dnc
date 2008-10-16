@@ -1,0 +1,17 @@
+class AddAccountColumns < ActiveRecord::Migration
+  def self.up
+    add_column :accounts, :name, :string
+    add_column :accounts, :description, :string
+    add_column :accounts, :type, :enum, :limit => [:none, :ap, :ar, :accumulated_depreciation, :cash,  
+                                                   :cost_of_goods, :equity_does_not_close, :equity_closes, 
+                                                   :retained_earnings, :expense, :fixed_assets, :income,
+                                                   :inventory, :long_term_liabilities, :other_assets,
+                                                   :current_assets, :current_liabilities] #, :default => :none
+  end
+
+  def self.down
+    remove_column :accounts, :name
+    remove_column :accounts, :description
+    remove_column :accounts, :type
+  end
+end

@@ -1,0 +1,10 @@
+class AddEntryColumns < ActiveRecord::Migration
+  def self.up
+    add_column :description, :string
+    add_column :debit, :credit, :decimal, :precision => 17, :scale => 2, :default => 0
+  end
+
+  def self.down
+    remove_column :description, :debit, :credit
+  end
+end
